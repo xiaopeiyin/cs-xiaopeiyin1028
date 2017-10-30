@@ -289,6 +289,11 @@
 							<img src="img/banner09.jpg"/>
 						</a>
 					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/banner01.jpg"/>
+						</a>
+					</li>
 				</ul>
 				<ol>
 					<li class="current"></li>
@@ -306,6 +311,43 @@
 				<span class="prev1"></span>
 				<img src="img/normal_right.png" class="prev2"/>
 			</div>
+			<script>
+				
+				$(function(){
+					var i = 0
+					$(".next2").click(function(){
+						
+						if($(".lunbo>ul").is(":animated")){
+							return ;
+						}
+												
+						i++;
+						$(".lunbo>ul").animate({"left" : -i*1000},500,function(){
+							if(i>8){
+								$(".lunbo>ul").css("left",0)
+								i=0;
+								
+							}
+						})
+						$(".lunbo ol li").eq(i).addClass("current").siblings().removeClass("current");
+					})
+					$(".prev2").click(function(){
+						
+						if($(".lunbo>ul").is(":animated")){
+							return ;
+						}
+						$(".lunbo>ul").animate({"left" : -i*1000},500,function(){
+							$(".lunbo ol li").eq(i).addClass("current").siblings().removeClass("current");
+							i--;
+							if(i<=0){
+																
+								$(".lunbo>ul").css("left",-8000)
+								i=8;								
+							}														
+						})																		
+					})				
+				})
+			</script>
 			<!--商品展示-->
 			<div class="shopShow">
 				<div class="shopShow-l">
@@ -326,11 +368,41 @@
 					人气良品
 				</div>
 				<div class="goodsContent">
+					<ul class="oneShop" id="oneShop">
+						
+					</ul>
+				</div>
+				<div class="clear">
 					
 				</div>
 				<div class="goodsBot">
 					<a href="javascript:;">MORE</a>
 				</div>
+				<script>
+					$(function(){
+						console.log("zhixin")
+						var url = "http://h6.duchengjiu.top/shop/api_goods.php";
+						var data = {
+							page: 1,
+							pagesize: 18
+						}
+						$.get(url,data,function(str){
+							
+							console.log(str)
+							var arr = str.data;
+							var oUl = document.getElementById("oneShop")
+							for(var i=0; i<arr.length; i++){
+								
+								
+								var oLi = document.createElement("li");
+								var oImg = document.createElement("img");
+								oImg.src = arr[i]["goods_thumb"];
+								oLi.appendChild(oImg);
+								oUl.appendChild(oLi);
+							}
+						})
+					})
+				</script>
 			</div>
 		</div>
 		<!--首页底部-->
@@ -389,15 +461,77 @@
 							<p>iPhone Android</p>
 							<span>客户端下载</span>
 						</div>
+						<ul class="download">
+							<li class="download-l">
+								<a href="javascript:;">
+									<span>1</span>
+									<p>下载iPhone版</p>
+								</a>
+							</li>
+							<li class="download-r">
+								<a href="javascript:;">
+									<span>2</span>
+									<p>下载Android版</p>
+								</a>
+							</li>
+						</ul>
 					</a>
 					<ul>
-						<li><a href="javascript:;"></a></li>
-						<li><a href="javascript:;"></a></li>
-						<li><a href="javascript:;"></a></li>
+						<li class="li1"><a href="javascript:;"></a></li>
+						<li class="li2"><a href="javascript:;"></a></li>
+						<li class="li3"><a href="javascript:;"></a></li>
+					</ul>
+				</div>
+				<div class="footer-b-b">
+					<ul class="footer-b-b-nav">
+						<li><a href="javascript">关于良仓</a></li>
+						<li><a href="javascript">服务协议</a></li>
+						<li><a href="javascript">隐私保护政策</a></li>
+						<li><a href="javascript">使用指南</a></li>
+						<li><a href="javascript">联系我们</a></li>
+						<li><a href="javascript">加入我们</a></li>
+						<li><a href="javascript">友情链接</a></li>
+						<li><a href="javascript">私信良仓</a></li>						
+					</ul>
+					<div class="clear"></div>
+					<ul class="footer-b-b-cont">
+						<li>© &nbsp;2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627</li>
+						<li>&nbsp;&nbsp;&nbsp;公司名称：北京良仓文化传播有限公司  电话：010-58263516</li>
+						<li>&nbsp;&nbsp;&nbsp;公司地址：北京朝阳区百子湾路32号6号楼1层60号.</li>
+						<li>&nbsp;&nbsp;&nbsp;社会信用统一代码：91110105059231575L  食品许可证：JY11105160159557</li>
+						<li>&nbsp;&nbsp;&nbsp;图书证名称：中华人民共和国出版物经营许可证  图书证编号：新出发京零 字第 朝 150051 号 </li>
 					</ul>
 				</div>
 			</div>
+			
 		</div>
-		
+		<div class="server">
+			<div class="toTop"></div>
+			<script>
+				$(function(){
+					
+					$(document).scroll(function(){
+						
+						var top = $(document).scrollTop();
+						if(top>100){
+							$(".toTop").show()							
+						}
+						else{
+							$(".toTop").hide()							
+						}
+					})
+					$(".toTop").click(function(){
+						console.log("点击了")
+						
+					
+					//	console.log(document.body.offsetTop)
+					//	$(document).animate({scrollTop : 0},1000)
+						
+					$("body,html").animate({scrollTop: 0},500);	
+					})
+				})
+			</script>
+			<a href="javascript:;">联系客服</a>
+		</div>
 	</body>
 </html>
