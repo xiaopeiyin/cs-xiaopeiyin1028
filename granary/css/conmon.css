@@ -149,11 +149,6 @@ a{
 	width: 40px;
 	height: 40px;
 	display: block;
-	
-	/*background: url(../img/icon1.png) no-repeat;
-	background-size: 100% 100%;*/
-	/*border: 1px solid red;*/
-	/*margin: 0 auto;*/
 }
 .shopBox>ul>li>a>b{
 	position: relative;
@@ -206,6 +201,7 @@ a{
 .notesBox ul{
 	width: 900px;
 }
+/*轮播样式*/
 .lunbo{
 	width: 1000px;
 	height: 510px;
@@ -232,20 +228,133 @@ a{
 .lunbo>ol>li.current{
 	background: #000;
 }
-.next1,.next2{
-	/*border: 1px solid red;*/
+.next1,.next2,.prev1,.prev2{
 	width: 50px;
 	height: 50px;
 	position: absolute;
-	right: 30px;
+	
 	top: 150px;
 }
-.next1{
+.next1,.prev1{
 	border-radius: 25px;
 	background: #000000;
 	opacity: 0.3;
 }
-.next2{
-	font: 50px/50px "微软雅黑";
-	text-align: center;
+.next1,.next2{
+	right: 30px;
 }
+.prev1,.prev2{
+	left: 30px;
+}
+/*商品展示样式*/
+.shopShow{
+	width: 1000px;
+	height: 404px;
+	margin: 10px auto;
+	/*border: 1px solid red;*/
+}
+.shopShow-l,.shopShow-c,.shopShow-r{
+	float: left;
+	width: 320px;
+	height: 404px;
+}
+.shopShow-c,.shopShow-r{
+	margin-left: 20px;
+}
+.imgb{
+	margin-top: 18px;
+}
+/*人气良品样式*/
+.goods{
+	width: 1000px;
+	height: auto;
+	margin-top: 34px auto;
+	/*border: 1px solid red;*/
+}
+.goodsTop{
+	width: 100%;
+	font: 13px/40px Arial;
+	color: #C0C0C0;
+	text-align: center;
+	border-bottom: 1px solid #C0C0C0;
+}
+.goodsContent{
+	width: 100%;
+	height: 300px;
+	margin: 40px auto;
+	border: 1px solid red;
+}
+.goodsBot>a{
+	display: block;
+	width: 142px;
+	height: 44px;
+	border: 4px solid #25292e;
+	color: #333;
+	font: 13px/44px arial;
+	text-align: center;
+	margin: 100px auto;
+	font-style: italic;
+}
+/*底部样式*/
+.footer-t{
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #ededed;
+}
+.footer-t-cont{
+	width: 1000px;
+	height: 250px;
+	margin: 0 auto;
+	background: #fbfdfe;	
+}
+.footer-t-t{
+	width: 230px;
+	height: 20px;
+	margin: 50px auto;
+	
+}
+.footer-t-t>a{
+	color: #666;
+	font-size: 13px;
+	font-family: arial;
+	font-weight: bold;
+	
+}
+.footer-t-t>a>p{
+	padding-left: 30px;
+	background: url(../img/icon.png) no-repeat -174px -356px;
+}
+.footer-t-b>ul>li{
+	float: left;
+	margin-right: 60px;
+	font-size: 13px;
+}
+.footer-t-b>ul>li>i{
+	/*background: url(../img/icon.png) no-repeat;*/
+	float: left;
+	width: 56px;
+	height: 56px;
+	/*border: 1px solid red;*/
+	
+}.footer-t-b>ul>li>div{
+	padding-top: 10px;
+	float: left;
+	margin-left: 20px;
+}
+
+/*.clear{
+	clear: both;
+}*/
+.no1{
+	background: url(../img/icon.png) no-repeat 0 -360px;
+}
+.no2{
+	background: url(../img/icon.png) no-repeat -154px -220px;
+}
+.no3{
+	background: url(../img/icon.png) no-repeat -57px -358px;
+}
+.no4{
+	background: url(../img/icon.png) no-repeat -114px -358px;
+}
+
