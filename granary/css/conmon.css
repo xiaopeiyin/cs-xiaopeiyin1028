@@ -427,3 +427,17 @@ a{
 .footer-b-t>a:hover>ul{
 	display: block;
 }
+.goodsBot>a{
+	display: block;
+	width: 142px;
+	height: 44px;
+	border: 4px solid #25292e;
+	color: #333;
+	font: 13px/44px arial;
+	text-align: center;
+	margin: 100px auto;
+	font-style: italic;
+}
+.clear{
+	clear: both;
+}
