@@ -1,0 +1,184 @@
+.lunbo{
+	width: 1000px;
+	height: 510px;
+	overflow: hidden;
+	position: relative;
+}
+.lunbo>ul{
+	width: 10000px;
+	position: absolute;
+}
+.lunbo>ul>li{
+	float: left;
+}
+.lunbo>ol{
+	position: absolute;
+	left: 365px;
+	bottom: 20px;
+	width: 270px;
+	/*margin: 0 auto;*/
+}
+.lunbo>ol>li{
+	width: 20px;
+	height: 4px;
+	background: #e8e8e8;
+	float: left;
+	margin: 5px;
+}
+.lunbo>ol>li.current{
+	background: #000;
+}
+.next1,.next2,.prev1,.prev2{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	
+	top: 150px;
+}
+.next1,.prev1{
+	border-radius: 25px;
+	background: #000000;
+	opacity: 0.3;
+}
+.next1,.next2{
+	right: 30px;
+}
+.prev1,.prev2{
+	left: 30px;
+}
+/*商品展示样式*/
+.shopShow{
+	width: 1000px;
+	height: 404px;
+	margin: 10px auto;
+	/*border: 1px solid red;*/
+}
+.shopShow-l,.shopShow-c,.shopShow-r{
+	float: left;
+	width: 320px;
+	height: 404px;
+}
+.shopShow-c,.shopShow-r{
+	margin-left: 20px;
+}
+.imgb{
+	margin-top: 18px;
+}
+/*人气良品样式*/
+.goods{
+	width: 1000px;
+	height: auto;
+	margin-top: 34px auto;
+	/*border: 1px solid red;*/
+}
+.goodsTop{
+	width: 100%;
+	font: 13px/40px Arial;
+	color: #C0C0C0;
+	text-align: center;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.goodsContent{
+	width: 100%;
+	/*height: 300px;*/
+	margin: 40px auto;
+	/*border: 1px solid red;*/
+}
+.oneShop>li{
+	float: left;
+	margin: 0 17px 17px 0;
+	position: relative;
+}
+.oneShop>li:hover>a,.oneShop>li:hover>span,.oneShop>li:hover>h4,.oneShop>li:hover>p{
+	display: block;
+}
+
+.oneShop>li>img{
+	width: 316px;
+	height: 316px;
+}
+.oneShop>li>a{
+	position: absolute;
+	width: 316px;
+	height: 316px;
+	left: 0;
+	top: 0;
+	opacity: 0.3;
+	background: #333;
+	display: none;
+}
+.oneShop>li>span{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	font-style: italic;
+	display: none;
+}
+.oneShop>li>h4{
+	position: absolute;
+	width: 232px;
+	height: 20px;
+	left:158px;
+	top: 158px;
+	margin-left: -116px;
+	margin-top: -10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: none;
+}
+.oneShop>li>p{
+	position: absolute;
+	width: 250px;
+	height: 40px;
+	left:158px;
+	top: 166px;
+	margin-left: -125px;
+	/*margin-top: -20px;*/
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: none;
+}
+.oneShop>li>div{
+	position: relative;
+	/*border: 1px solid red;*/
+	/*height: 35px;
+	vertical-align: center;
+	line-height: 35px;*/
+}
+.oneShop>li>div>.logo{
+	float: left;
+	height: 35px;
+	font: 14px/35px "微软雅黑";
+	color: #b39687;
+	/*border: 1px solid red;*/
+}
+.oneShop>li>div>.logo>img{
+	width: 35px;
+	height: 35px;
+	box-shadow: 4px;
+}
+.oneShop>li>div>.heat{
+	float: right;
+	width: 50px;
+	height: 35px;
+	font: 14px/35px "微软雅黑";
+	background: url(../img/xin_black.png) no-repeat center right;
+	
+}
+.goodsBot>a{
+	display: block;
+	width: 142px;
+	height: 44px;
+	border: 4px solid #25292e;
+	color: #333;
+	font: 13px/44px arial;
+	text-align: center;
+	margin: 100px auto;
+	font-style: italic;
+}
+.contTit{
+	
+}
