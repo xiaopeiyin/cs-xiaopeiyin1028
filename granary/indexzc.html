@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>liangcang</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.idcode.css"/>
+		<style>
+			*{margin: 0;padding: 0;}
+             li{list-style: none;}
+             img{border: none;}
+             a{text-decoration: none;}
+             body{background:#999999;}
+		  .img{width:266px;height:118px;margin: 80px  auto 0 ;}
+		  .sub{width:576px;height:400px;margin:0 auto;}
+		  .sub-l{width:64px;height:390px;float:left;margin-top:10px;}
+		  .sub-l span{width:64px;height:75px;color:white;float:left;}
+		  .sub-r{width:480px;height:500px;float:right;margin:0 auto;}
+		  .table1{height:58px;width:300px;background: #cccccc;margin-bottom: 10px;color:white;padding-left:10px;}
+		  .table2{height:58px;width:300px;background: #cccccc;margin-bottom: 10px;color:white;padding-left:10px;}
+		  .dl{width:315px;height:43px;background:#25292e;text-align:center;padding-top:15px;}
+		  .dl a {color:white;}
+		  .checkbox{width:300px;height:48px;}
+		  .checkbox span{color:white;}
+		  .checkbox a{color:#0c79cc;margin-left:5px;}
+		  .last{width:310px;height:30px;margin-top:15px;padding-top: 10px;}
+		  .last-l{width:200px;height:58px;float:left;}
+		  .last img{margin-right:10px;}
+		  .last-r{width:100px;height:28px;border:1px solid #999999;
+		          border-bottom:2px solid white;float:right;text-align: center;
+		          color:white;}
+		          
+		   #idcode{
+		   	display: inline-block;
+		   	height: 60px;
+		   	boreder:1px solid red;
+		   }
+		</style>
+	</head>
+	<body>
+		<div class="img">
+		  <img src="img/dl_03.gif">
+		</div>
+		<div class="sub">
+			<div class="sub-l">
+				<span>手机号</span>
+				<span>验证码</span>
+				<span>创建密码</span>
+				<span>密码确认</span>
+			</div>
+			<div class="sub-r">
+				<input type="text" class="table1" value="请输入手机号" id="phone">
+				<input type="text" class="table1" id="Txtidcode" value="输入验证码"><span id="idcode"></span>
+				
+				<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+				<script src="js/jquery.idcode.js" type="text/javascript" charset="utf-8"></script>
+				<script>
+				
+					$(function(){
+						
+						$.idcode.setCode();
+				
+						$("#Txtidcode").change(function(){
+							
+							var isBy = $.idcode.validateCode()
+							console.log(isBy);
+							if(!isBy){
+								alert("验证码不正确")
+							} 
+						})
+					})
+				</script>
+				<input type="text" class="table1" value="6-20位字符组成，区分大小写" id="pw1">
+				<input type="text" class="table1" value="确认密码" id="pw2">
+				<div class="checkbox">
+				   <input type="checkbox" ><span>同意</span><a>良仓注册条款</a>
+				</div>
+				<div class="dl"><a href="">立即注册</a></div>
+				<div class="last">
+					<div class="last-l">
+						<img src="img/xt1_03.gif">
+						<img src="img/xt2_03.gif">
+						<img src="img/xt3_03.gif" >
+						<img src="img/xt4_03.gif">
+					</div>
+					<div class="last-r">
+						登录良仓
+					</div>
+				</div>	
+			</div>
+		</div>
+		</div>
+	</body>
+	
+	
+	
+	<script>
+		
+		$(function(){
+			
+			var arr = ["请输入手机号","输入验证码","6-20位字符组成，区分大小写","确认密码"]
+			$(".sub-r>input").focus(function(){
+				var i = $(this).index('input')			
+				if($(this).val() == arr[i]){
+					$(this).val("");
+				}
+				
+			})
+			$(".sub-r>input").blur(function(){
+				var i = $(this).index();
+				
+				if($(this).val()==""){
+					$(this).val(arr[i]);
+				}
+			})
+			
+			$(".dl").click(function(){
+
+				var reg =/^1[3|4|5|8][0-9]\d{4,8}$/;
+				var str = $(".sub-r>input").eq(0).val();
+				if(!reg.test(str)){
+					alert("手机号码格式不正确");
+					
+					return ;
+				}
+				else if($(".sub-r>input").eq(2).val() != $(".sub-r>input").eq(3).val()){
+					alert("密码输入不一样");
+					
+					return ;
+				}
+				
+				var url = "http://h6.duchengjiu.top/shop/api_user.php";
+				var data = {
+					status: "register",
+					username: $("#phone").val(),
+					password: $("pw1").val()
+				}
+				
+				$.get(url,data,function(str){
+					
+					console.log(str.code)
+					if(str.code == 0){
+						location.href = "http://127.0.0.1:8020/granary/index.html";
+					} 
+					else if(str.code == 2001){
+						alert("用户名已存在");
+					}
+					else{
+						alert("注册不成功！")
+					}
+				})
+			})
+			})
+			
+	</script>
+</html>
