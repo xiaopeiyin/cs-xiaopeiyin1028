@@ -98,6 +98,7 @@ a{
 	top: 0;
 	left: 265px;
 	overflow: hidden;
+	outline: medium;
 	/*left: 100px;*/
 }
 .btn1{
@@ -106,6 +107,7 @@ a{
 	float: right;
 	background: none;
 	border: none;
+	outline: medium;
 	cursor: pointer;
 	background: url(../img/icon.png) no-repeat -167px -143px;
 }

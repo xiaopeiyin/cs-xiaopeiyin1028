@@ -226,9 +226,17 @@
 				</form>
 				
 				<script>
-					$(".btn1").click(function(){
-						$(".search").animate({"left" : 0},100);
-						$(".search").focus();
+					$(".btn1").click(function(e){
+						
+						if($(".search").css("left") == "265px"){
+							
+							$(".search").animate({"left" : 0},100);
+							$(".search").focus();
+						}
+						else{
+							$(".search").animate({"left" : 265},100)
+						}
+						
 					})
 					$(".search").blur(function(){
 						$(this).animate({"left" : 265},100)

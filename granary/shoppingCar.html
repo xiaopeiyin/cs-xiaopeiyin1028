@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shoppingCar.css"/>
 		<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -240,7 +240,7 @@
 		</div>
 		
 		
-		<script>
+		<!--<script>
 			$(function(){
 				
 				var url = "http://h6.duchengjiu.top/shop/api_goods.php";
@@ -254,8 +254,52 @@
 					console.log(str);
 				})
 			})
-		</script>
-	
+		</script>-->
+
+		<div class="shopCarCont">
+			<ul>
+				<li>|</li>
+				<li>购物车</li>
+				<li>|</li>
+				<li>付款</li>
+				<li>|</li>
+			</ul>
+			<table>
+				<tr>
+					<th class="all">
+						<input type="checkbox" />全选
+					</th>
+					<th class="goodsOne">良品</th>
+					<th class="number">数量</th>
+					<th class="price">单价（元）</th>
+					<th class="allPrice">小计（元）</th>
+					<th class="handle">操作</th>
+				</tr>
+				<tr>
+					<td class="all">
+						<input type="checkbox" />
+						<img src="img/shop16.jpg"/>
+					</td>
+					<td class="goodsOne">
+						<p> Chelsea Boot系列雨靴| 多色可选哑光黑</p>
+						<span></span>
+					</td>
+					<td class="number">
+						<a class="add">+</a>
+						<span>1</span>
+						<a class="reduce">-</a>
+					</td>
+ 					<td class="price">499.00</td>
+					<td class="allPrice">
+						499.00
+						<a>499.00</a>
+					</td>
+					<td class="handle">
+						<a>删除</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 		<!--首页底部-->
 		<div class="footer-t">
 			<div class="footer-t-cont">
