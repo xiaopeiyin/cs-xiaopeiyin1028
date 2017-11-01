@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
-		<link rel="stylesheet" type="text/css" href="css/shoppingCar.css"/>
-		<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 	</head>
+	<style>
+		.main{width:984px;
+		       height:280px;
+		       margin:0 auto;
+		      }
+		.main-1{width:244px;
+		        height:280px;
+		        
+		        float:left;}
+		.main-1-a{width:120px;
+		          height:280px;
+		          float:left;}
+		.main-1-b{width:120px;height:280px;
+		          font-size:10px;
+		          float:right;}
+		.mix{width:50px;height:15px;
+		     background:#98b5d5;
+		     border-radius: 10px;
+		     text-align:center;color:white;
+		     }
+		.main-b{width:244px;height:40px;font-size:10px;}
+		.main-b-l{width:30px;height:40px;float:left;}
+		.main-b-l img{width:30px;height:40px;}
+		.main-b-r{width:210px;height:40px;float:right;background:#f4f4f4 ;}
+		.main-b-r-l{width:100px;height:40px;float:left;}
+		.main-b-r-r{width:100px;height:30px;float:right;padding-top:10px;text-align: right;}
+		.main-b-b{width:244px;height:230px;background: #14baba ;margin-top:10px;position:relative;}
+		.main-p{width:244px;height:230px;position:absolute;left:0;top:0;
+		        border:1px solid black;
+		        background:#87729a;
+		        display:none;
+		        opacity: 0.3;}
+		.main-b-b:hover .main-p{display:block;}
+		.main-p-t{width:240px;height:30px;border:1px solid black;background:#33f1f1;}
+		.main-p-d{width:240px;height:250px;text-align: center;line-height:220px;color:white;}
+	</style>
 	<body>
-		<!--顶部导航-->
+				<!--顶部导航-->
 		<div class="topNav">
 			<div class="navTop-content">
 				<a href="javascript:;"></a>
 				<ul>
 					<li><a href="javascript:;">登录</a></li>
 					<li><a href="javascript:;">注册</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
+					<li><a href="javascript:;">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
 				</ul>
@@ -228,6 +263,7 @@
 				<script>
 					$(".btn1").click(function(){
 						$(".search").animate({"left" : 0},100);
+					//	$(".btn1").css("border-bottom","4px solid #000")
 						$(".search").focus();
 					})
 					$(".search").blur(function(){
@@ -235,172 +271,147 @@
 					})
 				</script>
 			</div>
-
-			<div class="clear"></div>
-		</div>s
-
-		<div class="shopCarCont">
-			<ul>
-				<li>|</li>
-				<li>购物车</li>
-				<li>|</li>
-				<li>付款</li>
-				<li>|</li>
-			</ul>
-			<table>
-				<tr>
-					<th class="all">
-						<input type="checkbox" />全选
-					</th>
-					<th class="goodsOne">良品</th>
-					<th class="number">数量</th>
-					<th class="price">单价（元）</th>
-					<th class="allPrice">小计（元）</th>
-					<th class="handle">操作</th>
-				</tr>
-				<tr>
-					<td class="all">
-						<input type="checkbox" />
-						<img src="img/shop16.jpg"/>
-					</td>
-					<td class="goodsOne">
-						<p> Chelsea Boot系列雨靴| 多色可选哑光黑</p>
-						<span></span>
-					</td>
-					<td class="number">
-						<a class="add">+</a>
-						<span>1</span>
-						<a class="reduce">-</a>
-					</td>
- 					<td class="price">499.00</td>
-					<td class="allPrice">
-						499.00
-						<a>499.00</a>
-					</td>
-					<td class="handle">
-						<a>删除</a>
-					</td>
-				</tr>
-			</table>
+			<div class="contTit">
+				<ul>
+					<li class="contLogo"></li>
+					<li>
+						<b>全场包邮</b><span>(限中国大陆)</span>
+						<p>特殊商品除外</p>
+					</li>
+				</ul>
+				<div class="shopLogo"></div>
+			</div>
 		</div>
-		<!--首页底部-->
-		<div class="footer-t">
-			<div class="footer-t-cont">
-				<div class="footer-t-t">
-					<a href="javascript:;">
-						<p>粮仓商店/OUR SHOP</p>
-					</a>
+		<div class="main">
+			<div class="main-1">
+				<div class="main-1-a">
+					<img src="img/达人_03.gif">
 				</div>
-				<div class="footer-t-b">
-					<ul>
-						<li>
-							<i  class="no1"></i>
-							<div>
-								<p>全球精品</p>
-								<span>Global Selections</span>
-							</div>
-						</li>
-						<li>
-							<i  class="no2"></i>
-							<div>
-								<p>正品保证</p>
-								<span>Authenticity Guaranteed</span>
-							</div>
-						</li>
-						<li>
-							<i class="no3"></i>
-							<div>
-								<p>全场包邮</p>
-								<span>Free Delivery</span>
-							</div>
-						</li>
-						<li>
-							<i class="no4"></i>
-							<div>
-								<p>400-897-6336</p>
-								<span>工作日 09:00-18:00</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>			
-		</div>
-		<div class="footer-b">
-			<div class="footer-b-cont">
-				<div class="footer-b-t">
-					<a href="javascript:;">
-						<i></i>
-						<div>
-							<p>iPhone Android</p>
-							<span>客户端下载</span>
-						</div>
-						<ul class="download">
-							<li class="download-l">
-								<a href="javascript:;">
-									<span>1</span>
-									<p>下载iPhone版</p>
-								</a>
-							</li>
-							<li class="download-r">
-								<a href="javascript:;">
-									<span>2</span>
-									<p>下载Android版</p>
-								</a>
-							</li>
-						</ul>
-					</a>
-					<ul>
-						<li class="li1"><a href="javascript:;"></a></li>
-						<li class="li2"><a href="javascript:;"></a></li>
-						<li class="li3"><a href="javascript:;"></a></li>
-					</ul>
-				</div>
-				<div class="footer-b-b">
-					<ul class="footer-b-b-nav">
-						<li><a href="javascript">关于良仓</a></li>
-						<li><a href="javascript">服务协议</a></li>
-						<li><a href="javascript">隐私保护政策</a></li>
-						<li><a href="javascript">使用指南</a></li>
-						<li><a href="javascript">联系我们</a></li>
-						<li><a href="javascript">加入我们</a></li>
-						<li><a href="javascript">友情链接</a></li>
-						<li><a href="javascript">私信良仓</a></li>						
-					</ul>
-					<div class="clear"></div>
-					<ul class="footer-b-b-cont">
-						<li>© &nbsp;2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627</li>
-						<li>&nbsp;&nbsp;&nbsp;公司名称：北京良仓文化传播有限公司  电话：010-58263516</li>
-						<li>&nbsp;&nbsp;&nbsp;公司地址：北京朝阳区百子湾路32号6号楼1层60号.</li>
-						<li>&nbsp;&nbsp;&nbsp;社会信用统一代码：91110105059231575L  食品许可证：JY11105160159557</li>
-						<li>&nbsp;&nbsp;&nbsp;图书证名称：中华人民共和国出版物经营许可证  图书证编号：新出发京零 字第 朝 150051 号 </li>
-					</ul>
+				<div class="main-1-b">
+					<span>山本耀丝</span><img src="js/xx_03.gif">
+					<p>日本服装设计师</p>
+					<img src="images/rt_07.gif">
+					<div class="mix">
+						关注
+					</div>
 				</div>
 			</div>
-			
-		</div>
-		<div class="server">
-			<div class="toTop"></div>
-			<script>
-				$(function(){
-					
-					$(document).scroll(function(){
+			<div class="main-1">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
+					<div class="main-p">
+					   <div class="main-p-t">
+					             ￥13800.00
+					   </div>
+					   <div class="main-p-d">
+					   	 Borsalino礼帽
+					   </div>
+				    </div>
+				</div>
+				
+			</div>
+			<div class="main-1 main-3">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
 						
-						var top = $(document).scrollTop();
-						if(top>100){
-							$(".toTop").show()							
-						}
-						else{
-							$(".toTop").hide()							
-						}
-					})
-					$(".toTop").click(function(){
-
-						$("body,html").animate({scrollTop: 0},500);	
-					})
-				})
-			</script>
-			<a href="javascript:;">联系客服</a>
+				</div>
+			</div>
+			<div class="main-1 main-4">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
+				</div>
+			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<script type="text/javascript" src="js/Wayne.js" ></script>
+<script>
+	$(function(){
+		var url="http://h6.duchengjiu.top/shop/api_goods.php";
+		var data={
+			page:1,
+			pagesize:80
+		}
+		$.get(url,data,function(str){
+			console.log(str)
+			var  arr=str.data;
+			var str1="";
+			for(var i=0;i<arr.length;i++){
+				str1+='<div class="main-1"><div class="main-1-a"><img src="+arr[i].goods_thumb+ "></div><div class="main-1-b"><span>山本耀丝</span><img src="js/xx_03.gif"><p>日本服装设计师</p><img src="images/rt_07.gif"><div class="mix">关注</div></div></div>'
+			}
+		})
+	})
+//	$(function(){
+//		var url = "http://h6.duchengjiu.top/shop/api_goods.php";
+//		var data = {
+//			page: 1,
+//			pagesize: 6
+//		}
+//		$.get(url,data,function(str){
+//			console.log(str)
+//			var arr = str.data;
+//			var str3 = "";
+//			for (var i = 0; i < arr.length; i++) {
+//					str3 += '<li><div class="goods-top"><div class="box3"><a href=""><img src='+arr[i].goods_thumb + '/></a></div><div class="box4"><a href="">山本耀司<img src="img/daren.png" /></a><a class="aa1" href="">98<img src="img/xin_black.png" /></a></div>'
+//					str3 += '<div class="goods-bot"><a href=""><img src=' +arr[i].goods_thumb + '/></a><div class="fgc"></div></div></li><div class="v-blank"></div>'
+//					
+//				}
+//				
+//			
+//			
+//			$(".darenlb>ul").html(str3);
+//		})
+//	})
+//	$('.pre').click(function(){
+//		
+//	})
+</script>
 </html>
-
