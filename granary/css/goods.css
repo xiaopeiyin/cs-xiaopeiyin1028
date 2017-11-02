@@ -1,0 +1,185 @@
+.shopsCont-t{
+	width: 1000px;
+	height: 10px;
+	margin: 20px auto;
+	border: none;
+}
+.shopsCont{
+	width: 1000px;
+	margin: 0 auto;
+}
+.shopsCont-t>ul>li{
+	float: left;
+	color: #999999;
+	font-size: 13px;
+	margin-right: 5px;
+}
+.shopsCont-t>ul>li>a{
+	color: #999;
+	font-size: 13px;
+}
+/*.shopsCont-c{
+	margin-top: 10px;
+}*/
+.shopsCont-c-l{
+	float: left;
+	width: 348px;
+	height: 442px;
+	overflow: hidden;
+}
+
+.shopsCont-c-l-big>ul{
+	width: 1046px;
+}
+.shopsCont-c-l-big>ul>li,.shopsCont-c-l-lit>ul>li{
+	float: left;
+	/*border: 1px solid red;*/
+}
+.shopsCont-c-l-big>ul>li>img{
+	width: 348px;
+	height: 348px;
+}
+.shopCont-c-l-lit{
+	margin-top: 20px;
+}
+.shopCont-c-l-lit>ul{
+	width: 348px;
+
+}
+.shopCont-c-l-lit>ul>li>img{
+	width: 62px;
+	height: 62px;
+	float: left;
+	/*border: 1px solid black;*/
+}
+.shopCont-c-r{
+	float: left;
+	width: 344px;
+	height: 442px;
+	margin-left: 40px;
+}
+.heart{
+	display: block;
+	width: 25px;
+	height: 20px;
+	padding-left: 25px;
+	background: url(../img/xin_black.png) no-repeat;
+	color: gray;
+	font-size: 13px;
+}
+.titl{
+	font-size: 24px;
+	color: #999999;
+}
+.explian{
+	font-size: 20px;
+	color: gray;
+	width: 330px;
+	margin-top: 10px;
+}
+.price1{
+	font-size: 13px;
+	color: #999999;
+	margin-top: 10px;
+}
+.price1>span{
+	font-size: 20px;
+	color: cornflowerblue;
+	margin-left: 20px;
+}
+.shopCont-c-r>div{
+	margin: 10px 0 0 40px;
+}
+.shopCont-c-r>div>i{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: url(../img/free.png) no-repeat;
+	background-size:100% 100% ;
+}
+.shopCont-c-r>div>span{
+	font-size: 13px;
+	color: #999999;
+}
+.numTxt{
+	font-size: 13px;
+	color: #999999;
+	margin-top: 20px;
+}
+.numTxt>span{
+	display: inline-block;
+	width: 48px;
+	height: 25px;
+	border: 1px solid #000;
+	background: #ccc;
+	text-align: center;
+	line-height: 25px;
+	margin-left: 20px;
+}
+.addBox{
+	font-size: 13px;
+	color: #999;
+	margin-top: 40px;
+}
+.addBox>a{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	font-size: 20px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	line-height: 10px;
+	text-align: center;
+	color: #000;
+}
+.addBox>span{
+	display: inline-block;
+	width: 54px;
+	height: 25px;
+	border: 1px solid #999;
+	font: 14px/25px "微软雅黑";
+	text-align: center;
+}
+.now{
+	display: block;
+	width: 330px;
+	height: 42px;
+	background: #000;
+	color: #fff;
+	font:16px/42px "微软雅黑";
+	text-align: center;
+	margin-top: 20px;	
+}
+.addCar,.shares{
+	display: inline-block;
+	width: 160px;
+	height: 32px;
+	border: 1px solid #000;
+	font: 14px/32px "微软雅黑";
+	color: #333;
+	text-align: center;
+	margin-top: 10px;
+}
+.shares{
+	margin-left: 2px;
+}
+.shopsContPic>ul>li>img{
+	width: 720px;
+	height: 720px;
+	margin-top: 15px;
+}
+.shopsContTxt{
+	width: 720px;
+	/*margin-top: 30px;*/
+}
+.shopsContTxt>h3{
+	color: #666;
+	font-weight: 500;
+	font-size: 18px;
+	margin: 30px 0;
+}
+.shopsContTxt>p{
+	color: #666;
+	font-size: 13px;
+	margin-bottom: 10px;
+}

@@ -6,12 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-		<style>
-			*{
-				margin: 0;
-				padding: 0;
-			}
-		</style>
 	</head>
 	<body>
 		<!--顶部导航-->
@@ -19,9 +13,9 @@
 			<div class="navTop-content">
 				<a href="javascript:;"></a>
 				<ul>
-					<li><a href="javascript:;">登录</a></li>
-					<li><a href="javascript:;">注册</a></li>
-					<li><a href="javascript:;">购物车</a></li>
+					<li><a href="http://127.0.0.1:8020/granary/indexdy.html">登录</a></li>
+					<li><a href="http://127.0.0.1:8020/granary/indexzc.html">注册</a></li>
+					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
 				</ul>
@@ -33,24 +27,24 @@
 				<ul>
 					<li class="current"><a href="javascript:;">首页</a></li>
 					<li class="shop">
-						<a href="javascript:;">商店</a>
+						<a href="http://127.0.0.1:8020/granary/shop.html">商店</a>
 						<div class="shopNav">
 							<div class="shopBox">
 								<ul>
 									<li>
-										<a href="javascript:;">
+										<a href="http://127.0.0.1:8020/granary/goods.html">
 											<img src="img/icon1.png"/>
 											<b>家居</b>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:;">
+										<a href="http://127.0.0.1:8020/granary/goods.html">
 											<img src="img/icon2.png"/>
 											<b>家具</b>
 										</a>
 									</li>
 									<li>
-										<a href="javascript:;">
+										<a href="http://127.0.0.1:8020/granary/goods.html">
 											<img src="img/icon3.png"/>
 											<b>文具</b>
 										</a>
@@ -173,7 +167,7 @@
 						
 					</script>
 					<li class="notes">
-						<a href="javascript:;">杂志</a>
+						<a href="http://127.0.0.1:8020/granary/zazhi.html">杂志</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -196,7 +190,7 @@
 					</li>
 					
 					<li class="notes">
-						<a href="javascript:;">分享</a>
+						<a href="http://127.0.0.1:8020/granary/share.html">分享</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -232,10 +226,17 @@
 				</form>
 				
 				<script>
-					$(".btn1").click(function(){
-						$(".search").animate({"left" : 0},100);
-					//	$(".btn1").css("border-bottom","4px solid #000")
-						$(".search").focus();
+					$(".btn1").click(function(e){
+						
+						if($(".search").css("left") == "265px"){
+							
+							$(".search").animate({"left" : 0},100);
+							$(".search").focus();
+						}
+						else{
+							$(".search").animate({"left" : 265},100)
+						}
+						
 					})
 					$(".search").blur(function(){
 						$(this).animate({"left" : 265},100)
@@ -246,52 +247,52 @@
 			<div class="lunbo">
 				<ul>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner01.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner02.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner03.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner04.png"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="javascript:;http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner05.png"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner06.png"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner07.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner08.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner09.jpg"/>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="http://127.0.0.1:8020/granary/goods.html">
 							<img src="img/banner01.jpg"/>
 						</a>
 					</li>
@@ -372,7 +373,7 @@
 					<ul class="oneShop" id="oneShop">
 						<li>
 							<img src=""/>
-							<a href="">
+							<a href="http://127.0.0.1:8020/granary/goods.html">
 								
 							</a>
 							<span>￥480</span>
@@ -390,6 +391,42 @@
 						</li>
 						<li>
 							<img src=""/>
+							<a href="http://127.0.0.1:8020/granary/goods.html">
+								
+							</a>
+							<span>￥480</span>
+							<h4>11111111111111111111</h4>
+							<p>2222222222222222222222</p>
+							<div>
+								<a href="" class="logo">
+									<img src="img/shop02.jpg"/ >
+									<span>Grown Alchemist</span>
+								</a>
+								<a href="" class="heat">
+									375
+								</a>
+							</div>
+						</li>
+						<li>
+							<img src=""/>
+							<a href="http://127.0.0.1:8020/granary/goods.html">
+								
+							</a>
+							<span>￥480</span>
+							<h4>11111111111111111111</h4>
+							<p>2222222222222222222222</p>
+							<div>
+								<a href="" class="logo">
+									<img src="img/shop03.jpg"/ >
+									<span>Grown Alchemist</span>
+								</a>
+								<a href="" class="heat">
+									375
+								</a>
+							</div>
+						</li>
+						<li>
+							<img src="http://127.0.0.1:8020/granary/goods.html"/>
 							<a href="">
 								
 							</a>
@@ -398,7 +435,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop04.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -416,43 +453,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
-									<span>Grown Alchemist</span>
-								</a>
-								<a href="" class="heat">
-									375
-								</a>
-							</div>
-						</li>
-						<li>
-							<img src=""/>
-							<a href="">
-								
-							</a>
-							<span>￥480</span>
-							<h4>11111111111111111111</h4>
-							<p>2222222222222222222222</p>
-							<div>
-								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
-									<span>Grown Alchemist</span>
-								</a>
-								<a href="" class="heat">
-									375
-								</a>
-							</div>
-						</li>
-						<li>
-							<img src=""/>
-							<a href="">
-								
-							</a>
-							<span>￥480</span>
-							<h4>11111111111111111111</h4>
-							<p>2222222222222222222222</p>
-							<div>
-								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop05.jpg"/ >
 									<sp
 										an>Grown Alchemist</span>
 								</a>
@@ -471,7 +472,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop06.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -489,7 +490,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop07.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -507,7 +508,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop08.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -525,7 +526,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop09.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -543,7 +544,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop10.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -561,7 +562,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop11.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -579,7 +580,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop12.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -597,7 +598,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop13.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -615,7 +616,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop14.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -633,7 +634,23 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop15.jpg"/ >
+									<span>Grown Alchemist</span>
+								</a>
+								<a href="" class="heat">
+									375
+								</a>
+							</div>
+						</li>
+						<li>
+							<img src=""/>
+							<a href=""></a>
+							<span>￥480</span>
+							<h4>11111111111111111111</h4>
+							<p>2222222222222222222222</p>
+							<div>
+								<a href="" class="logo">
+									<img src="img/shop16.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -651,7 +668,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop17.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -669,25 +686,7 @@
 							<p>2222222222222222222222</p>
 							<div>
 								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
-									<span>Grown Alchemist</span>
-								</a>
-								<a href="" class="heat">
-									375
-								</a>
-							</div>
-						</li>
-						<li>
-							<img src=""/>
-							<a href="">
-								
-							</a>
-							<span>￥480</span>
-							<h4>11111111111111111111</h4>
-							<p>2222222222222222222222</p>
-							<div>
-								<a href="" class="logo">
-									<img src="img/shop01.jpg"/ >
+									<img src="img/shop18.jpg"/ >
 									<span>Grown Alchemist</span>
 								</a>
 								<a href="" class="heat">
@@ -705,7 +704,7 @@
 				</div>
 				<script>
 					$(function(){
-					//	console.log("zhixin")
+
 						var url = "http://h6.duchengjiu.top/shop/api_goods.php";
 						var data = {
 							page: 1,
@@ -738,7 +737,6 @@
 					<ul>
 						<li>
 							<i  class="no1"></i>
-							<!--<div class="clear"></div>-->
 							<div>
 								<p>全球精品</p>
 								<span>Global Selections</span>
@@ -746,7 +744,6 @@
 						</li>
 						<li>
 							<i  class="no2"></i>
-							<!--<div class="clear"></div>-->
 							<div>
 								<p>正品保证</p>
 								<span>Authenticity Guaranteed</span>
@@ -754,7 +751,6 @@
 						</li>
 						<li>
 							<i class="no3"></i>
-							<!--<div class="clear"></div>-->
 							<div>
 								<p>全场包邮</p>
 								<span>Free Delivery</span>
@@ -762,7 +758,6 @@
 						</li>
 						<li>
 							<i class="no4"></i>
-							<!--<div class="clear"></div>-->
 							<div>
 								<p>400-897-6336</p>
 								<span>工作日 09:00-18:00</span>
@@ -841,13 +836,8 @@
 						}
 					})
 					$(".toTop").click(function(){
-						console.log("点击了")
-						
-					
-					//	console.log(document.body.offsetTop)
-					//	$(document).animate({scrollTop : 0},1000)
-						
-					$("body,html").animate({scrollTop: 0},500);	
+
+						$("body,html").animate({scrollTop: 0},500);	
 					})
 				})
 			</script>

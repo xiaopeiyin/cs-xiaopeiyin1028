@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
-		<link rel="stylesheet" type="text/css" href="css/goods.css"/>
+		<link rel="stylesheet" type="text/css" href="css/share.css"/>
 		<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -228,126 +228,113 @@
 				<script>
 					$(".btn1").click(function(){
 						$(".search").animate({"left" : 0},100);
+					//	$(".btn1").css("border-bottom","4px solid #000")
 						$(".search").focus();
 					})
 					$(".search").blur(function(){
 						$(this).animate({"left" : 265},100)
 					})
-				
 				</script>
 			</div>
-			<div class="shopsCont">
-				<div class="shopsCont-t">
-					<ul>
-						<li><a href="http://127.0.0.1:8020/granary/index.html">粮仓</a></li>
-						<li> > </li>
-						<li><a href="http://127.0.0.1:8020/granary/share.html">女士</a></li>
-						<li> > </li>
-						<li>Knot Clutch 挽结牛皮手包（灰青色）</li>	
-					</ul>
-				</div>
-				
-				<div class="shopsCont-c">
-					<div class="shopsCont-c-l">
-						<div class="shopsCont-c-l-big">
-							<ul>
-								<li><img src="img/shops02.jpg"/></li>
-								<li><img src="img/shops03.jpg"/></li>
-								<li><img src="img/shops04.jpg"/></li>
-							</ul>
-						</div>
-						<div class="shopCont-c-l-lit">
-							<ul>
-								<li><img src="img/shops02.jpg"/></li>
-								<li><img src="img/shops03.jpg"/></li>
-								<li><img src="img/shops04.jpg"/></li>
-							</ul>
-						</div>
+		<!--分享页面内容-->
+			<div class="shareCont">
+				<div class="shareCont-head">
+					<div class="shareCont-h-t">
+						<ul>
+							<li><a href="">首页</a></li>
+							<li> > </li>
+							<li><a href="">全部精品</a></li>
+							<li> > </li>
+							<li>分享</li>
+						</ul>
 					</div>
-					<div class="shopCont-c-r">
-						<a href="javascript:;" class="heart">33</a>
-						<a href="javascript:;" class="titl">heroine</a>
-						<p class="explian">Knot Clutch 挽结牛皮手包（灰青色）</p>
-						<p class="price1">价格:<span>¥599.00元</span></p>
-						<div>
-							<i></i>
-							<span>免运费</span>
-							<i></i>
-							<span>正品授权</span>
-						</div>
-						
-						<p class="numTxt">数量：<span>一只</span></p>
-						<p class="addBox">
-							数量：							
-							<a class="device">-</a>
-							<span class="addNum">1</span>
-							<a class="add">+</a>													
-						</p>
-						<a href="javascript:;" class="now">立即购买</a>
-						<a href="javascript:;" class="addCar">加入购物车</a>
-						<a href="javascript:;" class="shares">分享</a>
+					<div class="shareCont-h-c">
+						<ul>
+							<li>
+								<div class="shareCont-h-c-t">
+									<img src="img/share01.jpg"/>
+									<p>
+										滇仓网DC
+										<span>356</span>
+									</p>
+								</div>
+								<div class="shareCont-h-c-c">
+									<img src=""/>
+									<a href=""></a>
+									<span></span>
+									<p></p>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
-				<script>
-					$(".addCar").click(function(){
+				<div class="shareCont-body">
+					<div class="shareCont-b-t">
+						<ul>
+							<li><a href="">价格</a></li>
+							<li>|</li>
+							<li><a href="">喜欢</a></li>
+							<li>|</li>
+							<li><a href="">时间</a></li>
+						</ul>
+					</div>
+					<div class="shareCont-b-c">
+						<ul>
+							<li>
+								<div class="shareCont-b-c-t">
+									<img src="img/share01.jpg"/>
+									<p>
+										滇仓网DC
+										<span>356</span>
+									</p>
+								</div>
+								<div class="shareCont-b-c-c">
+									<img src=""/>
+									<a href=""></a>
+									<span>￥29.00</span>
+									<p>111111</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script>
+				$(function(){
+					
+					var url = "http://h6.duchengjiu.top/shop/api_goods.php";
+					var data = {
+						page: 2,
+						pagesize: 43
+					}
+					$.get(url,data,function(str){
 						
-						var url = "http://h6.duchengjiu.top/shop/api_cart.php"
-						var data = {
-							goods_id: 37026,
-							number: 1
-						}
+						var arr = str.data;
+						var str1 = "";
+						var str2 = "";
 						
-						$.post(url,data,function(obj){
+						console.log(str)
+						for (var i = 0; i < arr.length; i++) {
+							if(i<3){
+								str1 += '<li><div class="shareCont-h-c-t"><img src="img/share01.jpg"/><p>滇仓网DC<span>356</span></p></div>'
+								str1 += '<div class="shareCont-h-c-c"><img src=' + arr[i].goods_thumb + '/><a href=""></a>'
+								str1 += '<span>' + arr[i].price + '</span><p>' + arr[i].goods_name +'</p>';
+							} 
+							else {
+								str2 += '<li><div class="shareCont-b-c-t"><img src="img/share01.jpg"/><p>滇仓网DC<span>356</span></p></div>'
+								str2 += '<div class="shareCont-b-c-c"><img src=' +arr[i].goods_thumb + '/><a href=""></a>'
+								str2 += '<span>' + arr[i].price + '</span><p>' + arr[i].goods_name +'</p>';
+							}
 							
-							console.log(obj)
-						})
+						}
+						$(".shareCont-h-c>ul").html(str1);
+						$(".shareCont-b-c>ul").html(str2);
 					})
-					
-				</script>
-				<div class="shopsContPic">
-					<ul>						
-						<li><img src="img/shops03.jpg"/></li>
-						<li><img src="img/shops04.jpg"/></li>
-						<li><img src="img/shops02.jpg"/></li>
-					</ul>
-				</div>
-				<div class="shopsContTxt">
-					<h3 class="titl">良仓推荐</h3>
-					<p>Knot Clutch(light cyan)</p>
-					<h3 class="tit2">品牌简介</h3>
-					<p>在优质原料、实用性高的基础上，以极简、艺术、形式感、有趣为品牌风格特点，主旨是分享快乐、分享lifestyle，赋予像朋友一样陪伴的意义。</p>
-					<h3 class="tit3">商品描述</h3>
-					<p>尺寸：16  cm  x  16  cm  x  1.5  cm</p>
-					<p>质地：意大利产粒面皮胚</p>
-					<h3 class="tit4">购物指南</h3>
-					<p>- 所有商品均为正品保证。</p>
-					<p>- 中国大陆地区免运费，默认商家合作快递。</p>
-					<p>- 蜡烛、液态品、手表等含电池产品无法空运，运输时间相较普通空运件会更久。</p>
-					<p>- 如出现产品质量问题请在签收后72小时内联系客服。</p>
-				</div>
-			</div>
-		</div>
-			<div class="clear"></div>
-	
-		<!--首页底部-->
-		
-		<!--<script>
-			$(function(){
-				
-				var url = "http://h6.duchengjiu.top/shop/api_goods.php";
-				
-				var data = {
-					goods_id: 33720,
-				}
-				
-				$.get(url,data,function(str){
-					
-					console.log(str);
 				})
-			})
-		</script>-->
-		
+			</script>
+			
+		</div>
+		<!--首页底部-->
 		
 		<div class="footer-t">
 			<div class="footer-t-cont">
@@ -360,6 +347,7 @@
 					<ul>
 						<li>
 							<i  class="no1"></i>
+							<!--<div class="clear"></div>-->
 							<div>
 								<p>全球精品</p>
 								<span>Global Selections</span>
@@ -367,6 +355,7 @@
 						</li>
 						<li>
 							<i  class="no2"></i>
+							<!--<div class="clear"></div>-->
 							<div>
 								<p>正品保证</p>
 								<span>Authenticity Guaranteed</span>
@@ -374,6 +363,7 @@
 						</li>
 						<li>
 							<i class="no3"></i>
+							<!--<div class="clear"></div>-->
 							<div>
 								<p>全场包邮</p>
 								<span>Free Delivery</span>
@@ -381,6 +371,7 @@
 						</li>
 						<li>
 							<i class="no4"></i>
+							<!--<div class="clear"></div>-->
 							<div>
 								<p>400-897-6336</p>
 								<span>工作日 09:00-18:00</span>
@@ -459,16 +450,17 @@
 						}
 					})
 					$(".toTop").click(function(){
-
-						$("body,html").animate({scrollTop: 0},500);	
+						console.log("点击了")
+						
+					
+					//	console.log(document.body.offsetTop)
+					//	$(document).animate({scrollTop : 0},1000)
+						
+					$("body,html").animate({scrollTop: 0},500);	
 					})
 				})
 			</script>
 			<a href="javascript:;">联系客服</a>
 		</div>
-		<span class="leftBtn"></span>
-		<span class="rightBtn"></span>
-			
 	</body>
 </html>
-
