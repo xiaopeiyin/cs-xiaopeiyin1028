@@ -14,9 +14,9 @@
 			<div class="navTop-content">
 				<a href="javascript:;"></a>
 				<ul>
-					<li><a href="http://127.0.0.1:8020/granary/indexdy.html" class="login1">登录</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/indexzc.html" class="rigester">注册</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
+					<li><a href="indexdy.html" class="login1">登录</a></li>
+					<li><a href="indexzc.html" class="rigester">注册</a></li>
+					<li><a href="shoppingCar.html">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
 				</ul>
@@ -28,24 +28,24 @@
 				<ul>
 					<li class="current"><a href="javascript:;">首页</a></li>
 					<li class="shop">
-						<a href="http://127.0.0.1:8020/granary/shop.html">商店</a>
+						<a href="shop.html">商店</a>
 						<div class="shopNav">
 							<div class="shopBox">
 								<ul>
 									<li>
-										<a href="http://127.0.0.1:8020/granary/goods.html">
+										<a href="goods.html">
 											<img src="img/icon1.png"/>
 											<b>家居</b>
 										</a>
 									</li>
 									<li>
-										<a href="http://127.0.0.1:8020/granary/goods.html">
+										<a href="goods.html">
 											<img src="img/icon2.png"/>
 											<b>家具</b>
 										</a>
 									</li>
 									<li>
-										<a href="http://127.0.0.1:8020/granary/goods.html">
+										<a href="goods.html">
 											<img src="img/icon3.png"/>
 											<b>文具</b>
 										</a>
@@ -175,7 +175,7 @@
 						
 					</script>
 					<li class="notes">
-						<a href="http://127.0.0.1:8020/granary/zazhi.html">杂志</a>
+						<a href="zazhi.html">杂志</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -198,7 +198,7 @@
 					</li>
 					
 					<li class="notes">
-						<a href="http://127.0.0.1:8020/granary/share.html">分享</a>
+						<a href="share.html">分享</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -768,7 +768,7 @@
 							console.log(str)
 							var arr = str.data;
 							$(".oneShop li>img").each(function(i){
-								$(".oneShop li>a").eq(i).attr("href","http://127.0.0.1:8020/granary/goods.html?id="+arr[i].goods_id)
+								$(".oneShop li>a").eq(i).attr("href","goods.html?id="+arr[i].goods_id)
 								$(".oneShop li>img").eq(i).attr("src",arr[i]["goods_thumb"])
 								$(".oneShop li>span").eq(i).html("￥"+arr[i]["price"])
 								$(".oneShop li>h4").eq(i).html(arr[i]["goods_name"])
