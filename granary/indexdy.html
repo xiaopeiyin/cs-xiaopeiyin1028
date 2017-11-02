@@ -38,7 +38,7 @@
 		<div class="sub">
 			<input type="text" placeholder="输入手机号" class="txt0">
 	        <div class="txt">
-			<input  type="text" class="txt1"  placeholder="输入密码">
+			<input  type="password" class="txt1"  placeholder="输入密码">
 			
 			
 			<div class="text-r">获取验证码</div>
@@ -101,6 +101,14 @@
 								$.cookie("username",obj.data.username)
 								location.href = "http://127.0.0.1:8020/granary/index.html";
 								
+							}
+							else if(obj.code == 2002){
+								
+								alert(obj.message)
+							}
+							else if(obj.code == 1001){
+								
+								alert(obj.message)
 							}
 						}
 						
