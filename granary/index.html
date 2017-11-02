@@ -356,7 +356,7 @@
 					var timer = setInterval(function(){
 						
 						move();
-					},2000);
+					},3000);
 					
 					$(".prev2").click(function(){
 						
@@ -383,7 +383,7 @@
 						timer = setInterval(function(){
 							
 							move();
-						},2000)
+						},3000)
 					})
 					function move(){
 						
@@ -392,7 +392,7 @@
 						}
 												
 						i++;
-						$(".lunbo>ul").animate({"left" : -i*1000},500,function(){
+						$(".lunbo>ul").animate({"left" : -i*1000},1000,function(){
 							if(i>8){
 								$(".lunbo>ul").css("left",0)
 								i=0;
