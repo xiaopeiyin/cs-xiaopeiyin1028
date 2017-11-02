@@ -313,17 +313,24 @@
 						var str1 = "";
 						var str2 = "";
 						
-						console.log(str)
 						for (var i = 0; i < arr.length; i++) {
 							console.log(arr[i].goods_id)
 							if(i<3){
-								str1 += '<li><div class="shareCont-h-c-t"><img src="img/share01.jpg"/><p>滇仓网DC<span>356</span></p></div>'
-								str1 += '<div class="shareCont-h-c-c"><img src=' + arr[i].goods_thumb + '/><a href="http://127.0.0.1:8020/granary/goods.html?id='+arr[i].goods_id+'"></a>'
+
+								str1 += '<li><div class="shareCont-h-c-t"><img src="img/share01.jpg"/>';
+								str1 += '<p>滇仓网DC<span>356</span></p></div>';
+								str1 += '<div class="shareCont-h-c-c"><img src='+ arr[i].goods_thumb;
+								str1 += '/><a href="http://127.0.0.1:8020/granary/goods.html?id='
+								str1 += arr[i].goods_id+'"></a>';
 								str1 += '<span>' + arr[i].price + '</span><p>' + arr[i].goods_name +'</p>';
 							} 
 							else {
-								str2 += '<li><div class="shareCont-b-c-t"><img src="img/share01.jpg"/><p>滇仓网DC<span>356</span></p></div>'
-								str2 += '<div class="shareCont-b-c-c"><img src=' +arr[i].goods_thumb + '/><a href="http://127.0.0.1:8020/granary/goods.html?id='+arr[i].goods_id+'"/></a>'
+								
+								str2 += '<li><div class="shareCont-b-c-t"><img src="img/share01.jpg"/>'
+								str2 += '<p>滇仓网DC<span>356</span></p></div>';
+								str2 += '<div class="shareCont-b-c-c"><img src=' +arr[i].goods_thumb + '/>'
+								str2 += '<a href="http://127.0.0.1:8020/granary/goods.html?id=';
+								str2 += arr[i].goods_id+'"/></a>';
 								str2 += '<span>' + arr[i].price + '</span><p>' + arr[i].goods_name +'</p>';
 							}
 							
