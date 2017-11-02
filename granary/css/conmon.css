@@ -51,9 +51,14 @@ a{
 	margin: 0 auto;
 }
 .pageNav{
+	width: 1000px;
 	height: 46px;
 	border-bottom: 4px solid #ededed;
 	line-height: 46px;
+	position: fixed;
+	top: 56px;
+	z-index: 999;
+	background: #fff;
 }
 .pageNav>ul{
 	float: left;
