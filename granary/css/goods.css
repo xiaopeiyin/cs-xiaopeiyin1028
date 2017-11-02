@@ -8,6 +8,7 @@
 	width: 1000px;
 	margin: 0 auto;
 }
+
 .shopsCont-t>ul>li{
 	float: left;
 	color: #999999;
@@ -19,7 +20,7 @@
 	font-size: 13px;
 }
 /*.shopsCont-c{
-	margin-top: 10px;
+	margin-top: 40px;
 }*/
 .shopsCont-c-l{
 	float: left;
@@ -49,6 +50,7 @@
 .shopCont-c-l-lit>ul>li>img{
 	width: 62px;
 	height: 62px;
+	margin-right: 5px;
 	float: left;
 	/*border: 1px solid black;*/
 }
@@ -75,7 +77,7 @@
 	font-size: 20px;
 	color: gray;
 	width: 330px;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 }
 .price1{
 	font-size: 13px;
@@ -166,7 +168,7 @@
 .shopsContPic>ul>li>img{
 	width: 720px;
 	height: 720px;
-	margin-top: 15px;
+	margin-top: 50px;
 }
 .shopsContTxt{
 	width: 720px;

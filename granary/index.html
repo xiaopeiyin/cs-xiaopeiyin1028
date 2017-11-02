@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
 	</head>
 	<body>
 		<!--顶部导航-->
@@ -13,8 +14,8 @@
 			<div class="navTop-content">
 				<a href="javascript:;"></a>
 				<ul>
-					<li><a href="http://127.0.0.1:8020/granary/indexdy.html">登录</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/indexzc.html">注册</a></li>
+					<li><a href="http://127.0.0.1:8020/granary/indexdy.html" class="login1">登录</a></li>
+					<li><a href="http://127.0.0.1:8020/granary/indexzc.html" class="rigester">注册</a></li>
 					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
@@ -164,6 +165,13 @@
 						$(".shop").mouseleave(function(){
 							$(".shopNav").slideUp();
 						})
+						var token = $.cookie("token");
+						var username = $.cookie("username");
+						if(username){
+							$(".login1").html(username)
+							$(".rigester").html("")
+						}
+
 						
 					</script>
 					<li class="notes">
@@ -228,13 +236,36 @@
 				<script>
 					$(".btn1").click(function(e){
 						
+						var value = $(".search").val();
+					//	console.log(value);
 						if($(".search").css("left") == "265px"){
 							
 							$(".search").animate({"left" : 0},100);
 							$(".search").focus();
+						 
+							
 						}
 						else{
-							$(".search").animate({"left" : 265},100)
+							
+							if(value!=""){
+								
+								var url = "http://h6.duchengjiu.top/shop/api_goods.php";
+								
+								var data = {
+									search_text:value,
+									page:1,
+									pagesize:20
+								}
+								
+								$.get(url,data,function(obj){
+									
+									console.log(obj)
+								})
+							}
+							else {
+								$(".search").animate({"left" : 265},100)
+							}
+							
 						}
 						
 					})
@@ -373,7 +404,7 @@
 					<ul class="oneShop" id="oneShop">
 						<li>
 							<img src=""/>
-							<a href="http://127.0.0.1:8020/granary/goods.html">
+							<a href="javascript:;" class="zhezhao">
 								
 							</a>
 							<span>￥480</span>
@@ -391,7 +422,7 @@
 						</li>
 						<li>
 							<img src=""/>
-							<a href="http://127.0.0.1:8020/granary/goods.html">
+							<a href="javascript:;" class="zhezhao">
 								
 							</a>
 							<span>￥480</span>
@@ -711,16 +742,18 @@
 							pagesize: 18
 						}
 						$.get(url,data,function(str){
-
+							
+							console.log(str)
 							var arr = str.data;
 							$(".oneShop li>img").each(function(i){
+								$(".oneShop li>a").eq(i).attr("href","http://127.0.0.1:8020/granary/goods.html?id="+arr[i].goods_id)
 								$(".oneShop li>img").eq(i).attr("src",arr[i]["goods_thumb"])
 								$(".oneShop li>span").eq(i).html("￥"+arr[i]["price"])
 								$(".oneShop li>h4").eq(i).html(arr[i]["goods_name"])
 								$(".oneShop li>p").eq(i).html(arr[i]["goods_desc"])
 							})
 						})
-					})
+				})
 				</script>
 			</div>
 		</div>
