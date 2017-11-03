@@ -80,7 +80,7 @@
 						$("#Txtidcode").change(function(){
 							
 							var isBy = $.idcode.validateCode()
-							console.log(isBy);
+						//	console.log(isBy);
 							if(!isBy){
 								alert("验证码不正确")
 							} 
@@ -147,7 +147,7 @@
 				}
 			})
 			$(".dl").click(function(){
-
+				console.log("点击了")
 				var reg =/^1[3|4|5|8][0-9]\d{4,8}$/;
 				var reg1 = /^[A-Za-z0-9]{6,20}$/
 				var str = $(".sub-r>input").eq(0).val();
@@ -184,7 +184,8 @@
 		//		console.log(data)
 				$.post(url,data,function(str){
 					
-			//		console.log(str)
+					console.log("请求了")
+					console.log(str)
 			//		console.log(str.code)
 					if(str.code == 0){
 						location.href = "index.html";
