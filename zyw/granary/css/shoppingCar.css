@@ -1,0 +1,78 @@
+.shopCarCont{
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+}
+.shopCarCont>ul{
+	width: 350px;
+	height: 32px;
+	margin: 50px auto;
+	
+}
+.shopCarCont>ul>li{
+	float: left;
+	font: 13px/32px "微软雅黑";
+	margin-right: 50px;
+	color: #999999;
+}
+.shopCarCont tr{
+	display: block;
+	height: 80px;
+	/*border: 1px solid red;*/
+	line-height: 80px;
+	border-bottom: 1px solid #C0C0C0;
+}
+.shopCarCont tr th{
+	font-weight: 100;
+	font-size: 14px;
+	/*border: 1px solid red;*/
+}
+.all{
+	width: 100px;
+	text-align: left;
+	padding-left:5px ;
+}
+.goodsOne{
+	width: 240px;
+}
+.number{
+	width: 200px;
+}
+.price{
+	width: 200px;
+}
+.allPrice{
+	width: 150px;
+}
+.handle{
+	width: 90px;
+	cursor: pointer;
+}
+.shopCarCont tr td{
+	/*border: 1px solid red;*/
+	height: 80px;
+	text-align: center;
+	vertical-align: top;
+	
+}
+.shopCarCont tr td img{
+	width: 60px;
+	height: 60px;
+}
+.shopCarCont tr td p{
+	font-size: 13px;
+	/*border: 1px solid red;*/
+	height: 94px;
+}
+.shopCarCont tr td span{
+	color: orangered;
+	font-size: 10px;
+	vertical-align: top;
+	/*border: 1px solid yellow;*/
+}
+.shopCarCont tr td a{
+	/*border: 1px solid blue;*/
+}
+.add,.reduce{
+	cursor: pointer;
+}

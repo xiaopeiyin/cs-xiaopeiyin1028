@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/conmon.css"/>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		.main{width:984px;
+		       height:280px;
+		       margin:0 auto;
+		      }
+		.main-1{width:244px;
+		        height:280px;
+		        
+		        float:left;}
+		.main-1-a{width:120px;
+		          height:280px;
+		          float:left;}
+		.main-1-b{width:120px;height:280px;
+		          font-size:10px;
+		          float:right;}
+		.mix{width:50px;height:15px;
+		     background:#98b5d5;
+		     border-radius: 10px;
+		     text-align:center;color:white;
+		     }
+		.main-b{width:244px;height:40px;font-size:10px;}
+		.main-b-l{width:30px;height:40px;float:left;}
+		.main-b-l img{width:30px;height:40px;}
+		.main-b-r{width:210px;height:40px;float:right;background:#f4f4f4 ;}
+		.main-b-r-l{width:100px;height:40px;float:left;}
+		.main-b-r-r{width:100px;height:30px;float:right;padding-top:10px;text-align: right;}
+		.main-b-b{width:244px;height:230px;background: #14baba ;margin-top:10px;position:relative;}
+		.main-p{width:244px;height:230px;position:absolute;left:0;top:0;
+		        border:1px solid black;
+		        background:#87729a;
+		        display:none;
+		        opacity: 0.3;}
+		.main-b-b:hover .main-p{display:block;}
+		.main-p-t{width:240px;height:30px;border:1px solid black;background:#33f1f1;}
+		.main-p-d{width:240px;height:250px;text-align: center;line-height:220px;color:white;}
+	</style>
+	<body>
+				<!--顶部导航-->
+		<div class="topNav">
+			<div class="navTop-content">
+				<a href="javascript:;"></a>
+				<ul>
+					<li><a href="javascript:;">登录</a></li>
+					<li><a href="javascript:;">注册</a></li>
+					<li><a href="javascript:;">购物车</a></li>
+					<li><a href="javascript:;">消息</a></li>
+					<li><a href="javascript:;">添加良品</a></li>									
+				</ul>
+			</div>
+		</div>
+		<!--内容盒子-->
+		<div class="content">
+			<div class="pageNav">
+				<ul>
+					<li class="current"><a href="javascript:;">首页</a></li>
+					<li class="shop">
+						<a href="javascript:;">商店</a>
+						<div class="shopNav">
+							<div class="shopBox">
+								<ul>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon1.png"/>
+											<b>家居</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon2.png"/>
+											<b>家具</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon3.png"/>
+											<b>文具</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon4.png"/>
+											<b>数码</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon5.png"/>
+											<b>玩乐</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon6.png"/>
+											<b>厨卫</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon7.png"/>
+											<b>美食</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon8.png"/>
+											<b>男装</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon9.png"/>
+											<b>女装</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon10.png"/>
+											<b>童装</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon11.png"/>
+											<b>鞋包</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon12.png"/>
+											<b>配饰</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon13.png"/>
+											<b>美护</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon14.png"/>
+											<b>户外</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon15.png"/>
+											<b>植物</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon16.png"/>
+											<b>图书</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon17.png"/>
+											<b>艺术</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon18.png"/>
+											<b>礼物</b>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/icon19.png"/>
+											<b>推荐</b>
+										</a>
+									</li>
+								</ul>
+								<div class="shopBox-r">
+									<a href="javascript:;">
+										<img src="img/xsx07.jpg"/>
+										<span>新视线：2015年7月刊</span>
+									</a>
+								</div>
+								<a href="jascript" class="all">查看所有品牌></a>
+								<a href="jascript" class="new">最新到货></a>
+							</div>							
+						</div>
+					</li>
+					<script>
+						$(".shop").mouseenter(function(){
+							$(".shopNav").css("display","block");
+						})
+						$(".shop").mouseleave(function(){
+							$(".shopNav").slideUp();
+						})
+						
+					</script>
+					<li class="notes">
+						<a href="javascript:;">杂志</a>
+						<div class="notesNav">
+							<div class="notesBox">
+								<ul>
+									<li><a href="javascript:;">趣物</a></li>
+									<li><a href="javascript:;">数码</a></li>
+									<li><a href="javascript:;">汽车</a></li>
+									<li><a href="javascript:;">文化</a></li>
+									<li><a href="javascript:;">时尚</a></li>
+									<li><a href="javascript:;">美食</a></li>
+									<li><a href="javascript:;">建筑</a></li>
+									<li><a href="javascript:;">空间</a></li>
+									<li><a href="javascript:;">圈子</a></li>
+									<li><a href="javascript:;">清单</a></li>
+									<li><a href="javascript:;">活动</a></li>
+									<li><a href="javascript:;">视频</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</li>
+					
+					<li class="notes">
+						<a href="javascript:;">分享</a>
+						<div class="notesNav">
+							<div class="notesBox">
+								<ul>
+									<li><a href="javascript:;">趣物</a></li>
+									<li><a href="javascript:;">数码</a></li>
+									<li><a href="javascript:;">汽车</a></li>
+									<li><a href="javascript:;">文化</a></li>
+									<li><a href="javascript:;">时尚</a></li>
+									<li><a href="javascript:;">美食</a></li>
+									<li><a href="javascript:;">建筑</a></li>
+									<li><a href="javascript:;">空间</a></li>
+									<li><a href="javascript:;">圈子</a></li>
+									<li><a href="javascript:;">清单</a></li>
+									<li><a href="javascript:;">活动</a></li>
+									<li><a href="javascript:;">视频</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<script>
+						$(".notes").mouseenter(function(){
+							$(".notesNav").css("display","block");
+						})
+						$(".notes").mouseleave(function(){
+							$(".notesNav").slideUp();
+						})
+					</script>
+					<li><a href="javascript:;">达人</a></li>
+				</ul>
+				<form action="" method="post" class="form1">
+					<input type="text" name="search" class="search" placeholder="search..." />
+					<input type="button" value="" class="btn1"/>
+				</form>
+				
+				<script>
+					$(".btn1").click(function(){
+						$(".search").animate({"left" : 0},100);
+					//	$(".btn1").css("border-bottom","4px solid #000")
+						$(".search").focus();
+					})
+					$(".search").blur(function(){
+						$(this).animate({"left" : 265},100)
+					})
+				</script>
+			</div>
+			<div class="contTit">
+				<ul>
+					<li class="contLogo"></li>
+					<li>
+						<b>全场包邮</b><span>(限中国大陆)</span>
+						<p>特殊商品除外</p>
+					</li>
+				</ul>
+				<div class="shopLogo"></div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="main-1">
+				<div class="main-1-a">
+					<img src="img/达人_03.gif">
+				</div>
+				<div class="main-1-b">
+					<span>山本耀丝</span><img src="js/xx_03.gif">
+					<p>日本服装设计师</p>
+					<img src="images/rt_07.gif">
+					<div class="mix">
+						关注
+					</div>
+				</div>
+			</div>
+			<div class="main-1">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
+					<div class="main-p">
+					   <div class="main-p-t">
+					             ￥13800.00
+					   </div>
+					   <div class="main-p-d">
+					   	 Borsalino礼帽
+					   </div>
+				    </div>
+				</div>
+				
+			</div>
+			<div class="main-1 main-3">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
+						
+				</div>
+			</div>
+			<div class="main-1 main-4">
+				<div class="main-b">
+					<div class="main-b-l">
+						<img src="images/xrt_03.gif">
+					</div>
+					<div class="main-b-r">
+						<div class="main-b-r-l">
+							<span>山本耀司</span>
+							<img src="images/rt_03.gif">
+						</div>
+						<div class="main-b-r-r">
+							404
+							<img src="img/xin_black.png">
+						</div>
+						<div class="main-b-r-r"></div>
+					</div>
+				</div>
+				<div class="main-b-b">
+					<img src="images/mz_03.gif"> 
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<script type="text/javascript" src="js/Wayne.js" ></script>
+<script type="text/javascript" src="js/xiding.js" ></script>
+<script>
+	$(function(){
+		var url="http://h6.duchengjiu.top/shop/api_goods.php";
+		var data={
+			page:1,
+			pagesize:80
+		}
+		$.get(url,data,function(str){
+			console.log(str)
+			var  arr=str.data;
+			var str1="";
+			for(var i=0;i<arr.length;i++){
+				str1+='<div class="main-1"><div class="main-1-a"><img src="+arr[i].goods_thumb+ "></div><div class="main-1-b"><span>山本耀丝</span><img src="js/xx_03.gif"><p>日本服装设计师</p><img src="images/rt_07.gif"><div class="mix">关注</div></div></div>'
+			}
+		})
+	})
+//	$(function(){
+//		var url = "http://h6.duchengjiu.top/shop/api_goods.php";
+//		var data = {
+//			page: 1,
+//			pagesize: 6
+//		}
+//		$.get(url,data,function(str){
+//			console.log(str)
+//			var arr = str.data;
+//			var str3 = "";
+//			for (var i = 0; i < arr.length; i++) {
+//					str3 += '<li><div class="goods-top"><div class="box3"><a href=""><img src='+arr[i].goods_thumb + '/></a></div><div class="box4"><a href="">山本耀司<img src="img/daren.png" /></a><a class="aa1" href="">98<img src="img/xin_black.png" /></a></div>'
+//					str3 += '<div class="goods-bot"><a href=""><img src=' +arr[i].goods_thumb + '/></a><div class="fgc"></div></div></li><div class="v-blank"></div>'
+//					
+//				}
+//				
+//			
+//			
+//			$(".darenlb>ul").html(str3);
+//		})
+//	})
+//	$('.pre').click(function(){
+//		
+//	})
+</script>
+</html>

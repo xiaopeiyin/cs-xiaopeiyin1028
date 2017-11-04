@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>liangcang</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.idcode.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<style>
+			*{margin: 0;padding: 0;}
+             li{list-style: none;}
+             img{border: none;}
+             a{text-decoration: none;}
+		  .img{width:113px;height:195px;margin: 80px  auto 0;margin-bottom: 10px;}
+		  input{width:270px;height:58px;margin:0 auto;border:1px solid white;border-bottom:1px solid black;
+		        margin:0 auto;background: url(img/sj_01.gif) no-repeat center left;padding-left:30px;}
+		  .sub{width:300px;height:132px;margin:0 auto;}
+		  .txt1{width:174px;height:58px;margin:0 auto;border:1px solid white;border-bottom:1px solid black;
+		        margin:0 auto;background: url(img/fw_02.gif) no-repeat center left;padding-left:30px;float:left;}
+		  .text-r{
+		  		 width:90px;height:30px;border:2px solid black;
+		         float: left;:right;border-radius: 5px;margin-top:15px;
+		         text-align: center;padding-top: 10px;cursor: pointer;
+		         }
+		  .checkbox{width:15px;height:15px;}
+		  .clect span{font-size:15px;}
+		  .clect{width:300px;height:58px;margin:10px auto;}
+		  .main{width:300px;height:43px;margin:0 auto;background:#25292e;text-align: center;padding-top:15px;}
+		  .main a{color:white;}
+		  .bottom{width:120px;height:20px;text-align: center;margin:30px auto;}
+		</style>
+	</head>
+<html>
+	<body>
+		<div class="img">
+		  <img src="img/lclogo_1.jpg">
+		</div>
+		<div class="sub">
+			<input type="text" placeholder="输入手机号" class="txt0">
+	        <div class="txt">
+			<input  type="password" class="txt1"  placeholder="输入密码">
+			
+			
+			<div class="text-r">获取验证码</div>
+			<script>
+				$(function(){
+					
+					$(".text-r").click(function(){
+						
+						var value = $(".txt0").val()
+						console.log(value)
+						var reg =/^1[3|4|5|8][0-9]\d{4,8}$/
+						if(!reg.test(value)){
+							alert("请输入正确的手机号")
+						}
+					})
+				})
+			</script>
+	      </div>
+		</div>
+		<div class="clect">
+			<input type="checkbox" class="checkbox" >
+			<span>自动登录</span>
+		</div>
+		<div class="main">
+			<a href="">登录</a>
+		</div>
+		<div class="bottom">
+		    <a href="">更多登录方式></a>	
+		</div>	
+		<script>
+			$(function(){
+				$(".main").click(function(){
+					var url = "http://h6.duchengjiu.top/shop/api_user.php";
+					var name = $(".txt0").val();
+					var pass = $(".txt1").val();
+	
+					var data = {
+						status: "login",
+						username: name,
+						password: pass
+					};
+					
+					var headrs = {						
+						"Content-Type": "application/x-www-form-urlencoded",
+					}
+
+					$.ajax({						
+						type: "POST",   
+						url: url,
+						async:true,
+						data: data,
+						headers:headrs,
+						success: function(obj){
+							console.log(obj)
+						//	console.log(obj.data.token)
+							if(obj.code == 0){
+								
+								$.cookie("token",obj.data.token);
+								$.cookie("username",obj.data.username)
+								location.href = "index.html";
+								
+							}
+							else if(obj.code == 2002){
+								
+								alert(obj.message)
+							}
+							else if(obj.code == 1001){
+								
+								alert(obj.message)
+							}
+						}
+						
+					})
+				})
+			})
+		</script>
+		<script type="text/javascript" src="js/xiding.js" ></script>
+	</body>
+	
+</html>
