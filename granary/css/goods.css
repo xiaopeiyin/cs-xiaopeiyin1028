@@ -133,6 +133,7 @@
 	line-height: 10px;
 	text-align: center;
 	color: #000;
+	cursor: pointer;
 }
 .addBox>span{
 	display: inline-block;

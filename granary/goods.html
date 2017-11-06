@@ -14,9 +14,9 @@
 			<div class="navTop-content">
 				<a href="javascript:;"></a>
 				<ul>
-					<li><a href="javascript:;">登录</a></li>
-					<li><a href="javascript:;">注册</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
+					<li><a href="indexdy.html">登录</a></li>
+					<li><a href="indexzc.html">注册</a></li>
+					<li><a href="shoppingCar.html">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
 				</ul>
@@ -26,9 +26,9 @@
 		<div class="content">
 			<div class="pageNav">
 				<ul>
-					<li class="current"><a href="http://127.0.0.1:8020/granary/index.html">首页</a></li>
+					<li class="current"><a href="index.html">首页</a></li>
 					<li class="shop">
-						<a href="javascript:;">商店</a>
+						<a href="shop.html">商店</a>
 						<div class="shopNav">
 							<div class="shopBox">
 								<ul>
@@ -168,7 +168,7 @@
 						
 					</script>
 					<li class="notes">
-						<a href="javascript:;">杂志</a>
+						<a href="zazhi.html">杂志</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -191,7 +191,7 @@
 					</li>
 					
 					<li class="notes">
-						<a href="javascript:;">分享</a>
+						<a href="share.html">分享</a>
 						<div class="notesNav">
 							<div class="notesBox">
 								<ul>
@@ -239,9 +239,9 @@
 			<div class="shopsCont">
 				<div class="shopsCont-t">
 					<ul>
-						<li><a href="http://127.0.0.1:8020/granary/index.html">粮仓</a></li>
+						<li><a href="index.html">粮仓</a></li>
 						<li> > </li>
-						<li><a href="http://127.0.0.1:8020/granary/share.html">女士</a></li>
+						<li><a href="share.html">女士</a></li>
 						<li> > </li>
 						<li class="expl">Knot Clutch 挽结牛皮手包（灰青色）</li>	
 					</ul>
@@ -265,10 +265,10 @@
 						</div>
 					</div>
 					<div class="shopCont-c-r">
-						<a href="javascript:;" class="heart">33</a>
-						<a href="javascript:;" class="titl titl1">heroine</a>
-						<p class="explian">Knot Clutch 挽结牛皮手包（灰青色）</p>
-						<p class="price1">价格:<span>¥599.00元</span></p>
+						<a href="javascript:;" class="heart"></a>
+						<a href="javascript:;" class="titl titl1"></a>
+						<p class="explian"></p>
+						<p class="price1">价格:<span></span></p>
 						<div>
 							<i></i>
 							<span>免运费</span>
@@ -306,6 +306,9 @@
 					
 					var goods_id = search.substring(4);
 					
+					var price = 0
+					
+			//		console.log(price)
 					
 					var url = "http://h6.duchengjiu.top/shop/api_goods.php";
 					var data = {
@@ -321,13 +324,40 @@
 						$(".price1>span").html(arr[0].price)
 						$(".shopsCont-c-l img").attr("src",arr[0].goods_thumb)
 						$(".shopsContPic>ul>li>img").attr("src",arr[0].goods_thumb)
+						
+						price = $(".price1>span").html();
+					})
+					
+					$(".add").click(function(){
+										
+						var num = $(".addNum").html();
+						
+						num++;
+						$(".addNum").html(num);
+						$(".price1>span").html(num*price + '.00')
+					})
+					$(".device").click(function(){
+						
+						var num = $(".addNum").html();
+						if(num == 0){
+							return ;
+						}
+						num--;
+						$(".addNum").html(num);
+						$(".price1>span").html(num*price + '.00')
 					})
 					
 					$(".addCar").click(function(){
 						
+						if(!token){
+							
+							location.href = "indexdy.html";
+							return ;
+						}
+						
 						var url = "http://h6.duchengjiu.top/shop/api_cart.php?token="+token;
 						
-						console.log(url)
+		//				console.log(url)
 						var data = {
 							goods_id: goods_id,
 							number: 1
@@ -340,8 +370,11 @@
 							data:data,
 							success:function(obj){
 								console.log(obj);
+								alert(obj.message);
 							}
 						});
+						
+						
 					})
 					
 				</script>

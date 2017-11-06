@@ -16,7 +16,7 @@
 				<ul>
 					<li><a href="javascript:;">登录</a></li>
 					<li><a href="javascript:;">注册</a></li>
-					<li><a href="http://127.0.0.1:8020/granary/shoppingCar.html">购物车</a></li>
+					<li><a href="shoppingCar.html">购物车</a></li>
 					<li><a href="javascript:;">消息</a></li>
 					<li><a href="javascript:;">添加良品</a></li>									
 				</ul>
@@ -284,37 +284,48 @@
 			</table>
 		</div>
 		
+		<div class="clear"></div>
 		<script>
 			$(function(){
 				
 				var token = $.cookie("token")
-				console.log(token)
+				
+				
+			
 				var url = "http://h6.duchengjiu.top/shop/api_cart.php?token="+token;
 
-				setInterval(function(){
-					
-					$("table").html("")
-					
+		//		setInterval(function(){				
 					$.get(url,{},function(obj){
 						
 						console.log(obj);
 						
 						var arr = obj.data;
-						console.log(arr[0])
 						var str = "";
-						var $tr = $("<tr></tr>")
-						
-						str += '<tr><td class="all"><input type="checkbox" /><img src=' +arr[0].goods_thumb + '/></td>'
-						str += '<td class="goodsOne"><p>' + arr[0].goods_name +'</p></td>';
-						str += '<td class="number"><a class="add">+</a><span>' + arr[0].goods_number +'</span><a class="reduce">-</a></td>'
-						str += '<td class="price">' + arr[0].goods_price + '</td>';
-						str += '<td class="allPrice">' + arr[0].goods_price + '</td>';
-						str += '<td class="handle"><a>删除</a></td>';
-						
-						$tr.html(str);
+						for (var i = 0; i < arr.length; i++) {
+							
+							var $tr = $("<tr></tr>")
+							str += '<tr><td class="all"><input type="checkbox" /><img src=' +arr[i].goods_thumb + '/></td>'
+							str += '<td class="goodsOne"><p>' + arr[i].goods_name +'</p></td>';
+							str += '<td class="number"><a class="add">+</a><span>' + arr[i].goods_number +'</span><a class="reduce">-</a></td>'
+							str += '<td class="price">' + arr[i].goods_price + '</td>';
+							str += '<td class="allPrice">' + arr[i].goods_price + '</td>';
+							str += '<td class="handle"><a>删除</a></td>';
+							$tr.html(str);
+						}
+			
 						$("table").append($tr);
+						console.log($(".handle>a").html())
+						
+						$(".handle>a").click(function(){
+							
+							$(this).parent().parent().remove();
+							
+						})
 					})
-				},1000)
+					
+
+					
+		//		},1000)
 				
 			})
 		</script>

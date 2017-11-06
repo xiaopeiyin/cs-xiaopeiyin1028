@@ -121,11 +121,12 @@ a{
 	height: 494px;
 	border-bottom:1px solid #808080;
 	position: absolute;
-	top: 106px;
+	top: 50px;
 	left: 0;
 	display: none;
 	z-index: 999;
 	background: #fff;
+	/*border: 1px solid red;*/
 }
 .shopBox{
 	width: 1000px;
@@ -193,7 +194,7 @@ a{
 	width: 100%;
 	border-bottom:1px solid #808080;
 	position: absolute;
-	top: 106px;
+	top: 50px;
 	left: 0;
 	display: none;
 	z-index: 999;
