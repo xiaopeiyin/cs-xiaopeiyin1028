@@ -16,67 +16,83 @@
 	margin-right: 50px;
 	color: #999999;
 }
-.shopCarCont tr{
-	display: block;
-	height: 80px;
-	/*border: 1px solid red;*/
-	line-height: 80px;
-	border-bottom: 1px solid #C0C0C0;
+.shopList li{
+	padding: 10px 0;
+	border-bottom: 1px solid #999;
 }
-.shopCarCont tr th{
-	font-weight: 100;
-	font-size: 14px;
-	/*border: 1px solid red;*/
+.shopList li.current div{
+	font-size: 16px;
+	color: #666;
+}
+.shopList li div{
+	display: inline-block;
+	font-size: 12px;
+	color: #aaa;
+}
+.shopList li div img{
+	width: 70px;
+	height: 70px;
 }
 .all{
 	width: 100px;
-	text-align: left;
-	padding-left:5px ;
+	text-align: center;
+	vertical-align: middle;
 }
-.goodsOne{
-	width: 240px;
+.goodshop{
+	width: 320px;
+	text-align: center;
 }
 .number{
-	width: 200px;
-}
-.price{
-	width: 200px;
-}
-.allPrice{
-	width: 150px;
-}
-.handle{
-	width: 90px;
-	cursor: pointer;
-}
-.shopCarCont tr td{
-	/*border: 1px solid red;*/
-	height: 80px;
+	width: 120px;
 	text-align: center;
-	vertical-align: top;
-	
 }
-.shopCarCont tr td img{
-	width: 60px;
-	height: 60px;
+.onePrice{
+	width: 120px;
+	text-align: center;
 }
-.shopCarCont tr td p{
-	font-size: 13px;
-	/*border: 1px solid red;*/
-	height: 94px;
+.total{
+	width: 120px;
+	text-align: center;
 }
-.shopCarCont tr td span{
-	color: orangered;
-	font-size: 10px;
-	vertical-align: top;
-	/*border: 1px solid yellow;*/
+.delete{
+	width: 120px;
+	text-align: center;
 }
-.shopCarCont tr td a{
-	/*border: 1px solid blue;*/
-}
-.add,.reduce{
+.number2>span{
+	color: #666;
+	font-size: 14px;
+	margin-right: 5px;
 	cursor: pointer;
 }
-.clear{
-	clear: both;
+.delete>span{
+	color: #14BABA;
+	cursor: pointer;
+}
+.shopList li.current>.delete>span{
+	color: #666;
+}
+
+.balance{
+	width: 200px;
+	margin: 20px auto;
+	text-align: center;
+}
+.balance div{
+	margin: 15px;
+}
+.allPrice span{
+	color: #14BABA;
+	font-size: 20px;
+}
+.nowBbla p{
+	width: 100%;
+	text-align: center;
+	background: #14BABA;
+	padding: 10px 0;
+	font-size: 14px;
+	color: #fff;
+}
+.goOn a{
+	color: #666;
+	font-size: 14px;
 }

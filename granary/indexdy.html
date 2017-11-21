@@ -98,7 +98,18 @@
 								
 								$.cookie("token",obj.data.token);
 								$.cookie("username",obj.data.username)
-								location.href = "index.html";
+								
+								var locationHref = location.hash.substring(10);
+								
+								console.log(locationHref)
+								if(locationHref){
+									
+									location.href = locationHref;
+								}else{
+									
+									location.href = "index.html";
+								}
+								
 								
 							}
 							else if(obj.code == 2002){

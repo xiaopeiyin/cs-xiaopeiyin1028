@@ -248,40 +248,83 @@
 				<li>付款</li>
 				<li>|</li>
 			</ul>
-			<table>
-				<tr>
-					<th class="all">
-						<input type="checkbox" />全选
-					</th>
-					<th class="goodsOne">良品</th>
-					<th class="number">数量</th>
-					<th class="price">单价（元）</th>
-					<th class="allPrice">小计（元）</th>
-					<th class="handle">操作</th>
-				</tr>
-				<!--<tr>
-					<td class="all">
-						<input type="checkbox" />
-						<img src="img/shop16.jpg"/>
-					</td>
-					<td class="goodsOne">
-						<p> Chelsea Boot系列雨靴| 多色可选哑光黑</p>
-						<span></span>
-					</td>
-					<td class="number">
-						<a class="add">+</a>
-						<span>1</span>
-						<a class="reduce">-</a>
-					</td>
- 					<td class="price">499.00</td>
-					<td class="allPrice">
-						499.00
-					</td>
-					<td class="handle">
-						<a>删除</a>
-					</td>
-				</tr>-->
-			</table>
+			<ol class="shopList">
+				<li class="current">
+					<div class="all" id="allCheck">
+						<input type="checkbox">全选
+					</div>
+					<div class="goodshop">
+						<span>良品</span>
+					</div>
+					<div class="number">
+						<span>数量</span>
+					</div>
+					<div class="onePrice">
+						<span>单价(元)</span>
+					</div>
+					<div class="total">
+						<span>小计(元)</span>
+					</div>
+					<div class="delete">
+						<span>操作</span>
+					</div>
+				</li>
+				<!--<li>
+					<div class="all">
+						<input type="checkbox">
+						<input type="hidden" value="goods_id" class="goods">
+						<img src="img/shop03.jpg"/>
+					</div>
+					<div class="goodshop">
+						<span>Bold Wall Cloc挂钟 | 简约时尚 【三色可选】白色</span>
+					</div>
+					<div class="number number2">
+						<span>-</span><span>1</span><span>+</span>
+					</div>
+					<div class="onePrice">
+						<span>449.00</span>
+					</div>
+					<div class="total">
+						<span>449</span>
+					</div>
+					<div class="delete">
+						<span>删除</span>
+					</div>
+				</li>-->
+				<!--<li>
+					<div class="all">
+						<input type="checkbox">
+						<input type="hidden" value="goods_id" class="goods">
+						<img src="img/shop03.jpg"/>
+					</div>
+					<div class="goodshop">
+						<span>Bold Wall Cloc挂钟 | 简约时尚 【三色可选】白色</span>
+					</div>
+					<div class="number number2">
+						<span>-</span><span>1</span><span>+</span>
+					</div>
+					<div class="onePrice">
+						<span>449.00</span>
+					</div>
+					<div class="total">
+						<span>449</span>
+					</div>
+					<div class="delete">
+						<span>删除</span>
+					</div>
+				</li>-->
+			</ol>
+		</div>
+		<div class="balance">
+			<div class="allPrice">
+				<p>良品总价/<span>￥0.00</span></p>
+			</div>
+			<div class="nowBbla">
+				<p><a href="balance.html">立即结算</a></p>
+			</div>
+			<div class="goOn">
+				<a href="shop.html">继续购物</a>
+			</div>
 		</div>
 		
 		<div class="clear"></div>
@@ -293,6 +336,7 @@
 				
 			
 				var url = "http://h6.duchengjiu.top/shop/api_cart.php?token="+token;
+				var allPrice = 0;
 
 		//		setInterval(function(){				
 					$.get(url,{},function(obj){
@@ -303,27 +347,173 @@
 						var str = "";
 						for (var i = 0; i < arr.length; i++) {
 							
-							var $tr = $("<tr></tr>")
-							str += '<tr><td class="all"><input type="checkbox" /><img src=' +arr[i].goods_thumb + '/></td>'
-							str += '<td class="goodsOne"><p>' + arr[i].goods_name +'</p></td>';
-							str += '<td class="number"><a class="add">+</a><span>' + arr[i].goods_number +'</span><a class="reduce">-</a></td>'
-							str += '<td class="price">' + arr[i].goods_price + '</td>';
-							str += '<td class="allPrice">' + arr[i].goods_price + '</td>';
-							str += '<td class="handle"><a>删除</a></td>';
-							$tr.html(str);
+							
+							 str += `<li>
+								<div class="all" id="all">
+									<input type="checkbox">
+									<input type="hidden" value="${arr[i].goods_id}" class="goods">
+									<img src="${arr[i].goods_thumb}"/>
+								</div>
+								<div class="goodshop">
+									<span>${arr[i].goods_name}</span>
+								</div>
+								<div class="number number2">
+									<span class="leftBtn">-</span><span>${arr[i].goods_number}</span><span class="rightBtn">+</span>
+								</div>
+								<div class="onePrice">
+									<span>${arr[i].goods_price}</span>
+								</div>
+								<div class="total">
+									<span>${arr[i].goods_number * arr[i].goods_price}</span>
+								</div>
+								<div class="delete">
+									<span>删除</span>
+								</div>
+							</li>`
 						}
-			
-						$("table").append($tr);
-						console.log($(".handle>a").html())
 						
-						$(".handle>a").click(function(){
+						$(".shopList").append(str)
+						
+						$(".delete>span").click(function(){
 							
-							$(this).parent().parent().remove();
+							var goods_id = $(this).parent().parent().children(".all").children(".goods").val();
+							var url = "http://h6.duchengjiu.top/shop/api_cart.php?token="+token;
+							var data = {
+								"goods_id": goods_id,
+								"number": 0
+							}
+//							console.log(goods_id)
+//							$(this).parent().parent().remove();
 							
+							$.post(url,data,function(obj){
+								console.log(obj)
+							})
+							
+						})
+						
+//						单选,改变总价格
+						$("#all input[type=checkbox]").click(function(){
+							
+							if(this.checked == false){
+								
+								console.log("1")
+								$("#allCheck").children('input').get(0).checked = false;
+							}
+							addPrice(this)
+							
+							return ;
+							
+						})
+						
+//						全选改变总价格
+						$("#allCheck").click(function(){
+							
+							if($(this).children('input').is(":checked")){
+								
+								$("#all input[type=checkbox]").each(function(i){
+									
+									this.checked = true;
+									
+									addPrice(this)
+								})
+							} else{
+								
+								$("#all input[type=checkbox]").each(function(i){
+									
+									this.checked = false;
+									
+									addPrice(this)
+								})
+							}
+							
+							return ;
+						})
+						
+						$(".leftBtn").click(function(){
+							
+							var num = parseInt($(this).next().text());
+							var price = $(this).parent().siblings('.onePrice').children('span').text();
+							var totalPri = 0;
+							var goods_id = $(this).parent().siblings('.all').children('.goods').val();
+								console.log(price,totalPri,goods_id)				
+							num--;
+							
+//							console.log(num)
+							
+							if(num<1){
+								
+								console.log("小于1了")
+								num=1;
+								return ;
+							}
+							totalPri = num * parseInt(price);
+							$(this).next().text(num)
+							$(this).parent().siblings('.total').children('span').text(totalPri)
+							
+							removeGoodAjax(goods_id,num,token)
+						})
+						
+						$(".rightBtn").click(function(){
+							
+							var num = parseInt($(this).prev().text());
+							var price = $(this).parent().siblings('.onePrice').children('span').text();
+							var totalPri = 0;	
+							var goods_id = $(this).parent().siblings('.all').children('.goods').val();
+							num++;
+							
+							console.log(num)
+							
+							if(num>10){
+								
+								console.log("小于1了")
+								num=10;
+								
+								return ;
+							}
+							totalPri = num * parseInt(price);
+							$(this).prev().text(num)
+							
+							$(this).parent().siblings('.total').children('span').text(totalPri)
+							
+							removeGoodAjax(goods_id,num,token)
 						})
 					})
 					
-
+					function addPrice(obj){
+						
+						var totalPri = $(obj).parent().parent().children('.total').children('span').text();
+							if($(obj).is(":checked")){
+								
+								allPrice += parseInt(totalPri);
+								
+								
+								
+							} else {
+								
+								allPrice -= parseInt(totalPri);
+							}
+							
+							$(".allPrice span").text(allPrice + ".00");
+					}
+					
+					
+					function removeGoodAjax(goods_id,num,token){
+						
+						
+						$.ajax({
+							type:"post",
+							url:"http://h6.duchengjiu.top/shop/api_cart.php?token="+token,
+							async:true,
+							data: {
+								"goods_id": goods_id,
+								"number": num
+							},
+							dataType: "json",
+							success: function(obj){
+								console.log(obj)
+							}
+						});
+					}
 					
 		//		},1000)
 				

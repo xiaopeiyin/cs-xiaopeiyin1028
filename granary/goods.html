@@ -351,16 +351,19 @@
 						
 						if(!token){
 							
-							location.href = "indexdy.html";
+							location.href = "indexdy.html#callback="+ location.href;
 							return ;
 						}
 						
+						var goods_number = localStorage.getItem("cart"+goods_id);
+						
+						goods_number = goods_number? parseInt(goods_number)+1 : 1;
 						var url = "http://h6.duchengjiu.top/shop/api_cart.php?token="+token;
 						
 		//				console.log(url)
 						var data = {
 							goods_id: goods_id,
-							number: 1
+							number: goods_number
 						}
 						
 						$.ajax({
@@ -371,6 +374,8 @@
 							success:function(obj){
 								console.log(obj);
 								alert(obj.message);
+								
+								localStorage.setItem("cart"+goods_id,goods_number)
 							}
 						});
 						
